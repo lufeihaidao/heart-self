@@ -1,3 +1,100 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+/*button-color*/
+@mixin button_color($color){
+  color: white;
+  background: $color;
+}
+.btn-pink{
+  @include button_color(magenta);
+}
+.btn-blue{
+  @include button_color(deepskyblue);
+}
+.btn-gray{
+  @include button_color($grayLight);
+}
+/*logo*/
+#logo{
+  margin-bottom: 10px;
+}
+/*photo*/
+#photos{
+  margin-top: 20px;  
+  .right{
+    margin-top:4px;  
+    color: #999;
+    padding: 20px 0px 0px 40px;  
+    width: 22%;
+    #intro-text{
+      .title{  
+        font-size: 2em;
+        color: black;
+        padding-bottom: 20px;  
+      }
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }  
+    .custom{
+      button{
+        margin-bottom: 20px;
+      }  
+      .btn-weibo{
+        background: $blue;  
+        color: white;
+      }
+      .btn-straight{
+        background: $pink;
+        color: white;
+      }
+    }
+    .also{
+      margin-top: 40px;
+    }
+  }
+}
+.section{
+  margin-top: 40px;
+}
+/*story*/
+#story{
+  img{
+    /*.center-block();*/
+  }
+}
+/*custom*/
+#custom{
+  .image-text{
+    margin: 0px 2% 0px 2%;  
+    width: 29%;
+  }
+}
+/*about-custom*/
+#about-custom{
+  p, .middle{  
+    @include center-block();
+    text-align: center;
+  }
+  p{
+    font-size: 1.7em;
+    color: $grayDark;
+    .number{
+      color: white;
+      background-color: $blue;
+      padding: 0 5px;
+    }
+  }
+} 
+/*footer*/
+footer{
+  /*padding: 0 40px;  */
+  /*height: 60px;*/
+  /*margin-top: -60px;*/
+  /*margin: 0 auto;*/
+  margin-bottom: 20px;  
+  .inner{   
+    margin: 20px -20px 0px -20px;  
+  }
+}

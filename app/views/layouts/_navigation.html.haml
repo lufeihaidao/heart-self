@@ -1,5 +1,11 @@
-= link_to "Heart Self", root_path, :class => 'brand'
-%ul.nav
+#logo= link_to image_tag("http://meshu.io/static/images/logo.png"), root_path, :class => 'brand'
+%ul.nav.nav-pills
+  %li.active= link_to '首页', '/'
+  %li= link_to '定制', '/'
+  %li= link_to '淘宝店', '/'
+  %li= link_to '展示', '/'
+  %li= link_to '品与质', '/'
+%ul.nav.pull-right  
   - if user_signed_in?
     %li
       = link_to 'Logout', destroy_user_session_path, :method=>'delete'

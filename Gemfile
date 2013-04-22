@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 gem 'sqlite3'
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -17,7 +17,7 @@ gem "cucumber-rails", ">= 1.3.1", :group => :test, :require => false
 gem "launchy", ">= 2.2.0", :group => :test
 gem "capybara", ">= 2.0.3", :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.3.0.0"
+gem "bootstrap-sass", ">=2.3.0.0"
 gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"

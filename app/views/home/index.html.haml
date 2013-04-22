@@ -1,4 +1,68 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+-#%h3 Home
+-#- @users.each do |user|
+  -#%p
+    -#User: #{link_to user.name, user}
+%div#photos
+  =image_tag("http://meshu.io/static/images/photos/meshu04.jpg", class:"pull-left")
+  =image_tag("http://meshu.io/static/images/photos/meshu03.jpg", class:"pull-left")
+  %div.right.pull-left
+    %div#intro-text
+      %div.title 心私
+      %p 把最私密的地点传递最美的首饰给你
+    %div.custom
+      %button.btn.btn-large.btn-blue 用新浪微博开始定制
+      %br
+      %button.btn.btn-large.btn-pink 直接开始开始定制
+    %div.also
+      %p 你还可以
+      %button.btn.btn-large.btn-gray 用街旁网连接
+      或
+      %br
+      %br
+      %button.btn.btn-large.btn-gray 看看别人的作品
+
+%div.clearfix
+%div#story.section
+  %h1 每个“心私”都在讲述一个故事
+  =image_tag("http://meshu.io/static/images/samples/macro0.jpg", class:"center")
+
+
+
+%div.clearfix
+%div#custom.section
+  %h1 “心私”是怎么定制的？
+  %div.image-text.pull-left
+    =image_tag("http://meshu.io/static/images/diagrams/diagrams_01.png", class:"center")
+    %p 进入地图选择城市，点击您曾经去过或喜欢的地方。
+
+  %div.image-text.pull-left
+    =image_tag("http://meshu.io/static/images/diagrams/diagrams_02.png", class:"center")
+    %p 心私会定做出属于您唯一的吊坠、耳环、耳坠或挂件。
+    
+  %div.image-text.pull-left
+    =image_tag("http://meshu.io/static/images/diagrams/diagrams_03.png", class:"center")
+    %p 我们为您提供精心打造的包装和送货上门的物流服务。
+
+
+
+%div.clearfix
+%div#unique.section
+  %h1 每个“心私”都是独一无二的私心和爱
+  =image_tag("http://meshu.io/static/images/diagrams/postcard_shoot_web.jpg", class:"center")
+    
+%div.clearfix
+  %div#about-custom.section
+    %p
+      已定制
+      %span.number 5516
+      份心私
+    %h1 您准备好定制了吗？
+    %div.middle
+      %button.btn.btn-large.btn-gray 看看大家的作品
+      %button.btn.btn-large.btn-pink 开始您的定制
+    %p 
+      你也可以连接
+      %button.btn.btn-blue 新浪微博
+      或
+      %button.btn.btn-blue 街旁网
+      使用踩过的地点
