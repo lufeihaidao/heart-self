@@ -5,4 +5,13 @@ class HomeController < ApplicationController
   def custom
     @user = current_user
   end
+  def taobao
+    @user = current_user
+  end
+  def display
+    #@user = current_user
+  end
+  def quality
+    #@user = current_user
+  end
 end

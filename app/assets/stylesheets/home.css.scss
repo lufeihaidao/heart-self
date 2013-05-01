@@ -16,6 +16,9 @@
 .btn-gray{
   @include button_color($grayLight);
 }
+
+
+/*** index part ***/
 /*logo*/
 #logo{
   margin-bottom: 10px;
@@ -97,4 +100,25 @@ footer{
   .inner{   
     margin: 20px -20px 0px -20px;  
   }
+}
+
+
+
+/*** custom part ***/
+#custom-photos{
+  div{
+    width: 50%;
+    height: 480px;
+    button{
+      position: relative;
+      left: 70px;
+      top: 400px;
+    }
+  }
+  #line{
+    background: url("http://meshu.io/static/images/photos/meshu04.jpg") no-repeat;
+  }
+  #dot{
+    background: url("http://meshu.io/static/images/photos/meshu03.jpg") no-repeat;
+  }  
 }
