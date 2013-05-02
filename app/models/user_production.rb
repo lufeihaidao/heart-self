@@ -5,10 +5,11 @@
 #  id            :integer          not null, primary key
 #  user_id       :integer
 #  production_id :integer          not null
-#  order_at      :date             not null
+#  order_at      :datetime         not null
+#  bargain_price :integer          not null
 #  is_loved      :boolean          default(FALSE)
 #  is_sold       :boolean          default(FALSE)
-#  sold_at       :date             default(Tue, 31 Dec 2999)
+#  sold_at       :datetime         default(2999-12-31 16:00:00 UTC)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
