@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421052018) do
+ActiveRecord::Schema.define(:version => 20130502021126) do
+
+  create_table "productions", :force => true do |t|
+    t.date     "make_at",                   :null => false
+    t.string   "p_type",                    :null => false
+    t.string   "p_pattern",                 :null => false
+    t.string   "p_color",                   :null => false
+    t.string   "p_size",                    :null => false
+    t.integer  "love_count", :default => 0, :null => false
+    t.string   "img_url"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -23,6 +35,17 @@ ActiveRecord::Schema.define(:version => 20130421052018) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "user_productions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "production_id",                           :null => false
+    t.date     "order_at",                                :null => false
+    t.boolean  "is_loved",      :default => false
+    t.boolean  "is_sold",       :default => false
+    t.date     "sold_at",       :default => '2999-12-31'
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
