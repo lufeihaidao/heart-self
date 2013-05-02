@@ -24,12 +24,14 @@ ActiveRecord::Schema.define(:version => 20130502024817) do
   add_index "dots", ["production_id"], :name => "index_dots_on_production_id"
 
   create_table "productions", :force => true do |t|
-    t.date     "make_at",                   :null => false
+    t.datetime "make_at",                   :null => false
     t.string   "p_type",                    :null => false
     t.string   "p_pattern",                 :null => false
+    t.string   "p_material",                :null => false
     t.string   "p_color",                   :null => false
     t.string   "p_size",                    :null => false
     t.integer  "love_count", :default => 0, :null => false
+    t.integer  "price"
     t.string   "img_url"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
@@ -48,13 +50,14 @@ ActiveRecord::Schema.define(:version => 20130502024817) do
 
   create_table "user_productions", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "production_id",                           :null => false
-    t.date     "order_at",                                :null => false
+    t.integer  "production_id",                                    :null => false
+    t.datetime "order_at",                                         :null => false
+    t.integer  "bargain_price",                                    :null => false
     t.boolean  "is_loved",      :default => false
     t.boolean  "is_sold",       :default => false
-    t.date     "sold_at",       :default => '2999-12-31'
-    t.datetime "created_at",                              :null => false
-    t.datetime "updated_at",                              :null => false
+    t.datetime "sold_at",       :default => '2999-12-31 16:00:00'
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
   end
 
   create_table "users", :force => true do |t|

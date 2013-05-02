@@ -1,0 +1,6 @@
+%div.productions
+  -@productions.each do |p|
+    %div.each-production.pull-left
+      = image_tag(p.img_url)
+      %p #{p.p_color} #{p.p_type}  #{p.p_pattern} #{p.img_url}
+

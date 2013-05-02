@@ -1,2 +1,0 @@
-class PruductionController < ApplicationController
-end

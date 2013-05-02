@@ -9,4 +9,5 @@ HeartSelf::Application.routes.draw do
   match "/quality" => "home#quality", :as => "quality"
   devise_for :users
   resources :users
+  resources :productions
 end

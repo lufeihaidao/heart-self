@@ -3,10 +3,10 @@ class HomeController < ApplicationController
     @users = User.all
   end
   def custom
-    @user = current_user
+    @production = Production.new
   end
   def taobao
-    @user = current_user
+    #@user = current_user
   end
   def display
     #@user = current_user
