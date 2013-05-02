@@ -3,4 +3,5 @@ class Production < ActiveRecord::Base
   
   has_many :user_productions
   has_many :users, :through => :user_productions
+  has_many :dots
 end
