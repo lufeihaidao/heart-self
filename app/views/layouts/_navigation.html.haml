@@ -1,14 +1,14 @@
 #logo= link_to image_tag("http://meshu.io/static/images/logo.png"), root_path, :class => 'brand'
 %ul.nav.nav-pills
-  %li{:class => active?(:index)}
+  %li{:class => active?("home#index")}
     = link_to '首页', root_path
-  %li{:class => active?(:custom)}
+  %li{:class => active?("home#custom")}
     = link_to '定制', custom_path
-  %li{:class => active?(:taobao)}
+  %li{:class => active?("home#taobao")}
     = link_to '淘宝店', taobao_path
-  %li{:class => active?(:display)}
-    = link_to '展示', display_path
-  %li{:class => active?(:quality)}
+  %li{:class => active?("productions#index")}
+    = link_to '展示', productions_path
+  %li{:class => active?("home#quality")}
     = link_to '品与质', quality_path
 %ul.nav.pull-right  
   - if user_signed_in?

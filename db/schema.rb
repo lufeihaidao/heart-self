@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20130502024817) do
     t.integer  "bargain_price",                                    :null => false
     t.boolean  "is_loved",      :default => false
     t.boolean  "is_sold",       :default => false
-    t.datetime "sold_at",       :default => '2999-12-31 16:00:00'
+    t.datetime "sold_at",       :default => '3000-01-01 00:00:00'
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
   end
