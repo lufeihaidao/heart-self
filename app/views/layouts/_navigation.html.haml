@@ -19,7 +19,9 @@
         %b.caret
       %ul.dropdown-menu
         %li
-          = link_to '编辑', edit_user_registration_path
+          = link_to '用户编辑', edit_user_registration_path
+        %li
+          = link_to '我的心私'
         - if current_user.has_role? :admin  
           %li
             = link_to 'Admin', users_path
