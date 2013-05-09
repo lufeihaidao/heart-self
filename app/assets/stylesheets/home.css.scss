@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+// $grayLight: #999;
+// $blue: #049cdb;
+// $grayDark: #333;
 /*button-color*/
 @mixin button_color($color){
   color: white;
@@ -44,14 +47,7 @@
       button{
         margin-bottom: 20px;
       }  
-      .btn-weibo{
-        background: $blue;  
-        color: white;
-      }
-      .btn-straight{
-        background: $pink;
-        color: white;
-      }
+
     }
     .also{
       margin-top: 40px;
@@ -109,7 +105,7 @@ footer{
   div{
     width: 50%;
     height: 480px;
-    button{
+    a,button{
       position: relative;
       left: 70px;
       top: 400px;
