@@ -10,28 +10,37 @@
     = link_to '展示', productions_path
   %li{:class => active?("home#quality")}
     = link_to '品与质', quality_path
-%ul.nav.pull-right  
-  - if user_signed_in?
-    %li
-      = link_to '注销', destroy_user_session_path, :method=>'delete'
-  - else
-    %li
-      = link_to '登录', new_user_session_path
-  - if user_signed_in?
-    %li
-      = link_to '编辑', edit_user_registration_path
-    - if current_user.has_role? :admin
-      %li
-        = link_to 'Admin', users_path
-  - else
-    %li
-      = link_to '注册', new_user_registration_path
+/ %ul.nav.pull-right  
+/   - if user_signed_in?
+/     %li
+/       = link_to '注销', destroy_user_session_path, :method=>'delete'
+/   - else
+/     %li
+/       = link_to '登录', new_user_session_path
+/   - if user_signed_in?
+/     %li
+/       = link_to '编辑', edit_user_registration_path
+/     - if current_user.has_role? :admin
+/       %li
+/         = link_to 'Admin', users_path
+/   - else
+/     %li
+/       = link_to '注册', new_user_registration_path
 %ul.nav.pull-right  
   - if user_signed_in?
     %li.dropdown#user-manage
       %a.dropdown-toggle{:"data-toggle" => "dropdown", :href => "#user-manage"}
         = current_user.name
         %b.caret
-      %ul.dropdown-menu  
-        %li j
-        %li k
+      %ul.dropdown-menu
+        %li
+          = link_to '编辑', edit_user_registration_path
+        %li
+          = link_to 'Admin', users_path
+        %li
+          = link_to '注销', destroy_user_session_path, :method=>'delete' 
+  - else
+    %li
+      = link_to '登录', new_user_session_path
+    %li
+      = link_to '注册', new_user_registration_path
