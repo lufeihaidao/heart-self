@@ -3,7 +3,8 @@
   = simple_form_for @production do |f|
     = f.input :p_type, label:"类型", input_html: { value: @production.p_type }
     = f.input :make_at, label:"时间", input_html: { value: Time.now }
-    = f.input :p_pattern, label:"款式"
-    = f.input :p_material, label:"材料"
-    = f.input :p_color, label:"颜色"
-    = f.input :p_size, label:"尺寸"
+    = f.input :p_pattern, label:"款式", :required => true
+    = f.input :p_material, label:"材料", :required => true
+    = f.input :p_color, label:"颜色", :required => true
+    = f.input :p_size, label:"尺寸", :required => true
+    = f.button :submit, 'create', :class => 'btn-primary'

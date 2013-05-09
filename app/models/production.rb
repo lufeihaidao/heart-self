@@ -22,4 +22,9 @@ class Production < ActiveRecord::Base
   has_many :user_productions
   has_many :users, :through => :user_productions
   has_many :dots
+
+  validates :p_color, :presence => true
+  validates :p_pattern, :presence => true
+  validates :p_size, :presence => true
+  validates :p_material, :presence => true
 end
