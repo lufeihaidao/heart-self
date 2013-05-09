@@ -8,8 +8,18 @@ class ProductionsController < ApplicationController
     @production = Production.new
     @production.p_type = p_type
     if p_type != 'facet' && p_type != 'radial'
-    	redirect_to custom_path
+        redirect_to custom_path
     end
-    
+
   end
+
+  def create
+    @production = Production.new params[:production]
+    if @production.save
+      redirect_to productions_path
+    else
+      render "new"
+    end
+  end
+  
 end
