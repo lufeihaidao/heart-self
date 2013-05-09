@@ -26,3 +26,12 @@
   - else
     %li
       = link_to '注册', new_user_registration_path
+%ul.nav.pull-right  
+  - if user_signed_in?
+    %li.dropdown#user-manage
+      %a.dropdown-toggle{:"data-toggle" => "dropdown", :href => "#user-manage"}
+        = current_user.name
+        %b.caret
+      %ul.dropdown-menu  
+        %li j
+        %li k
