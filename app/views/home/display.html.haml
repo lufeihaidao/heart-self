@@ -3,31 +3,31 @@
   /   - task.id
 
 
-  - g.column :name => 'user' do |task|
+  - g.column :name => '用户' do |task|
     - link_to task.user.name, task.user
 
 
-  - g.column :name => 'production' do |task|
+  - g.column :name => '产品' do |task|
     - link_to "#{task.production.p_color} #{task.production.p_material} #{task.production.p_pattern}", task.production
 
 
-  - g.column :name => 'order at' do |task|
+  - g.column :name => '订于' do |task|
     - task.order_at
 
 
-  - g.column :name => 'is sold?' do |task|
-    - task.is_sold
+  - g.column :name => '已出售' do |task|
+    - task.is_sold ? "Yes" : "No"
 
 
-  - g.column :name => 'sold_at' do |task|
+  - g.column :name => '售于' do |task|
     - task.sold_at
 
 
-  - g.column :name => 'production price' do |task|
+  - g.column :name => '原价' do |task|
     - task.production.price
 
 
-  - g.column :name => 'bargain price' do |task|
+  - g.column :name => '交易价' do |task|
     - task.bargain_price
 
 
