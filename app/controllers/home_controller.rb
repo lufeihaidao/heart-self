@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     #@user = current_user
   end
   def display
-    @user_production_grid = initialize_grid(UserProduction)
+    @user_production_grid = initialize_grid(UserProduction, :order => 'user_productions.is_sold', :per_page => 30)
   end
   def quality
     #@user = current_user
