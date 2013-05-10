@@ -24,7 +24,9 @@
           = link_to '我的心私'
         - if current_user.has_role? :admin  
           %li
-            = link_to 'Admin', users_path
+            = link_to '用户管理', users_path
+          %li
+            = link_to '交易管理', display_path
         %li
           = link_to '注销', destroy_user_session_path, :method=>'delete' 
   - else
