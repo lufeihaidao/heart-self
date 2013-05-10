@@ -6,12 +6,15 @@ class UserProductionsController < ApplicationController
 
   def update
     @user_production = UserProduction.find params[:id]
-    if @user_production.update_attributes(params[:user_production])
-      # flash[:success] = "编辑成功"
-      redirect_to display_path
-    else
-      render 'edit'
-    end
+    respond_to do |format|
+      if @user_production.update_attributes(params[:user_production])
+        format.html { redirect_to display_path, notice: '编辑成功' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @user_production.errors, status: :unprocessable_entity }
+      end
+    end    
   end
 
 end

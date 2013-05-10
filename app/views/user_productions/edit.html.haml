@@ -4,6 +4,6 @@
     = f.error_notification
     = display_base_errors @user_production
     = f.input :sold_at, label:"时间", as: :hidden, input_html: { value: Time.now }
-    = f.input :is_sold, label:"已出售", :required => true
+    = f.input :is_sold, label:"已出售"
     = f.input :bargain_price, label:"交易价格", :required => true
     = f.button :submit, '修改', :class => 'btn-primary'
