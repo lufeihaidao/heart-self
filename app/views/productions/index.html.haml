@@ -2,5 +2,5 @@
   -@productions.each do |p|
     %div.each-production.pull-left
       = image_tag(p.img_url)
-      = link_to "#{p.p_color} #{p.p_type}  #{p.p_pattern}", production_path(p), :class => "btn-blue btn"
+      = link_to "#{p.p_color} #{p.p_material}  #{p.p_pattern}", production_path(p), :class => "btn-blue btn"
 

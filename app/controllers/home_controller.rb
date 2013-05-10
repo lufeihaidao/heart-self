@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     #@user = current_user
   end
   def display
-    #@user = current_user
+    @user_production_grid = initialize_grid(UserProduction)
   end
   def quality
     #@user = current_user
