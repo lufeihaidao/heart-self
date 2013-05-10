@@ -3,7 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .productions{
   .each-production{
-  	width: 31%;
-  	margin: 0 1%;
-  }	
+    width: 31%;
+    margin: 0 1%;
+  } 
+}
+
+.production-show{
+  img{
+    // width:30%;
+  }
+  .production-message{
+    width: 20%;
+    margin: 0 0 0 15%; 
+  }
+  .dots-show{
+    // width: 20%;
+  }
 }
