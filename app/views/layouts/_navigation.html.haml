@@ -21,7 +21,7 @@
         %li
           = link_to '用户编辑', edit_user_registration_path
         %li
-          = link_to '我的心私'
+          = link_to '我的心私', myproductions_path
         - if current_user.has_role? :admin  
           %li
             = link_to '用户管理', users_path

@@ -14,4 +14,8 @@ class HomeController < ApplicationController
   def quality
     #@user = current_user
   end
+  def myproductions
+    @productions = current_user.productions
+    render 'productions/index'
+  end
 end
