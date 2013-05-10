@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require wice_grid
 //= require bootstrap
 //= require_tree .
