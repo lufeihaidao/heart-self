@@ -19,4 +19,7 @@ class UserProduction < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :production
+
+  validates :is_sold, :presence => true
+  validates :bargain_price, :presence => true  
 end
