@@ -13,7 +13,7 @@
 
 
   - g.column :name => '订于', :attribute => 'order_at' do |task|
-    - task.order_at
+    - l(task.order_at, format: :long)
 
 
   - g.column :name => '已出售', :attribute => 'is_sold', :filter => false do |task|
@@ -21,7 +21,7 @@
 
 
   - g.column :name => '售于', :attribute => 'sold_at' do |task|
-    - task.sold_at
+    - l(task.sold_at, format: :long)
 
 
   - g.column :name => '原价' do |task|
