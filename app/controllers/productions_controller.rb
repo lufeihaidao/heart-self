@@ -22,4 +22,8 @@ class ProductionsController < ApplicationController
     end
   end
   
+  def show
+    @production = Production.find params[:id]
+    @dots = @production.dots
+  end
 end

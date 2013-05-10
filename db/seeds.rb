@@ -42,4 +42,4 @@ d3 = Dot.create(:latitude => "29.5",:longitude => "106.5")
 puts "DOT belongs_to PRODUCTION"
 p1.dots << d1
 p1.dots << d2
-p2.dots << d1
+p2.dots << d3

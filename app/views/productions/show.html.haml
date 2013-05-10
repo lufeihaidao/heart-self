@@ -1,0 +1,15 @@
+.production-show
+  = image_tag(@production.img_url, class: "pull-left")
+  .production-message.pull-left
+    %h4 产品信息
+    %p= "款式：#{@production.p_pattern}"
+    %p= "材料：#{@production.p_material}"
+    %p= "颜色：#{@production.p_color}"
+    %p= "尺寸：#{@production.p_size}"
+    %p= "价格：#{@production.price}"
+    %button.btn.btn-large.btn-primary 立即购买
+  .dots-show.pull-left
+    %h4 我的地点
+    %ol
+      - @dots.each do |d|
+        %li= "纬度：#{d.latitude}，经度：#{d.longitude}"  
