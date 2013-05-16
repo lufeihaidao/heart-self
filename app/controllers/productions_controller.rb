@@ -6,6 +6,7 @@ class ProductionsController < ApplicationController
     # @user = current_user
     p_type =params[:p_type]
     @production = Production.new
+    @production.dots.build
     @production.p_type = p_type
     if p_type != 'facet' && p_type != 'radial'
         redirect_to custom_path
@@ -16,13 +17,14 @@ class ProductionsController < ApplicationController
   def create
     @production = Production.new params[:production]
     if @production.save
-      redirect_to productions_path
+      redirect_to production_path(@production)
     else
       render "new"
     end
   end
   
   def show
+    @user_production = UserProduction.new
     @production = Production.find params[:id]
     @dots = @production.dots
   end

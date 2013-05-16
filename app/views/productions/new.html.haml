@@ -3,11 +3,18 @@
   = simple_form_for(@production, url:productions_path(@production)) do |f|
     = f.error_notification
     = display_base_errors @production
-    = f.input :p_type, label:"类型", as: :hidden, input_html: { value: @production.p_type }
-    = f.input :make_at, label:"时间", as: :hidden, input_html: { value: Time.now }
-    = f.input :p_pattern, label:"款式", :required => true
-    = f.input :p_material, label:"材料", :required => true
-    = f.input :p_color, label:"颜色", :required => true
-    = f.input :p_size, label:"尺寸", :required => true
-    = f.input :img_url, as: :hidden, input_html: { value: "http://meshu.io/static/images/gallery/r5.jpg" }
+    .pull-left
+      = f.input :p_type, label:"类型", as: :hidden, input_html: { value: @production.p_type }
+      = f.input :make_at, label:"时间", as: :hidden, input_html: { value: Time.now }
+      = f.input :p_pattern, label:"款式", :required => true
+      = f.input :p_material, label:"材料", :required => true
+      = f.input :p_color, label:"颜色", :required => true
+      = f.input :p_size, label:"尺寸", :required => true
+      = f.input :img_url, as: :hidden, input_html: { value: "http://meshu.io/static/images/gallery/r5.jpg" }
+    .pull-left.production-dots
+    
+    .clearfix    
     = f.button :submit, '创建', :class => 'btn-primary'
+  
+  %input#get-position
+  %button.btn.btn-primary{onclick: "get_position()"} 输入经纬度值，格式为“纬度空格经度”

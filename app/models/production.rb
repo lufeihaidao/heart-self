@@ -17,11 +17,12 @@
 #
 
 class Production < ActiveRecord::Base
-  attr_accessible :img_url, :love_count, :make_at, :p_color, :p_pattern, :p_size, :p_type, :p_material, :price
+  attr_accessible :img_url, :love_count, :make_at, :p_color, :p_pattern, :p_size, :p_type, :p_material, :price, :dots_attributes
   
   has_many :user_productions
   has_many :users, :through => :user_productions
   has_many :dots
+  accepts_nested_attributes_for :dots
 
   validates :p_color, :presence => true
   validates :p_pattern, :presence => true

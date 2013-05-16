@@ -11,5 +11,5 @@ HeartSelf::Application.routes.draw do
   devise_for :users
   resources :users
   resources :productions
-  resources :user_productions, :only => [:edit, :update]
+  resources :user_productions, :only => [:edit, :update, :new, :create]
 end

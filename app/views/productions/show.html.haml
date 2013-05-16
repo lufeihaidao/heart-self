@@ -7,7 +7,12 @@
     %p= "颜色：#{@production.p_color}"
     %p= "尺寸：#{@production.p_size}"
     %p= "价格：#{@production.price}"
-    %button.btn.btn-large.btn-primary 立即购买
+    = simple_form_for @user_production do |f|
+      = f.input :user_id, as: :hidden,  input_html: { value: user_signed_in? ? current_user.id : 1 }
+      = f.input :production_id, as: :hidden,  input_html: { value: @production.id }
+      = f.input :order_at, as: :hidden,  input_html: { value: Time.now }
+      = f.input :bargain_price, as: :hidden,  input_html: { value: 100 }
+      = f.button :submit, '立即购买', :class => 'btn-primary'
   .dots-show.pull-left
     %h4 我的地点
     %ol
