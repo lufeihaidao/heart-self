@@ -26,9 +26,16 @@
 }
 
 .production-new{
-  .get-positions{
-     width: 30%;
+  .get-positions, #production-select-pattern, #production-select-others{
+    position: relative;
+    width: 30%;
+    height: 600px;
   }
+  .button-bottom{
+    position: absolute;
+    bottom: 0px;
+  }
+
   #map-display{
     width: 70%;
     height: 600px;

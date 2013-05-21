@@ -36,6 +36,8 @@ position = (type, count, value) ->
   </div>"
 
 $ ->
+  init()
+
   $('#position-search').click -> 
     append_div_to()
 
@@ -43,6 +45,15 @@ $ ->
     append_div_to() if e.which is 13
 
   display_map()  
+
+  $("#production-new-next").click -> positions_and_pattern_toggle(0)
+  $("#back-to-positions").click -> positions_and_pattern_toggle(0)
+  $("#go-to-others").click -> pattern_and_others_toggle(0)
+  $("#back-to-pattern").click -> pattern_and_others_toggle(0)
+
+init = ->
+  $('#production-select-pattern').hide()
+  $('#production-select-others').hide()
 
 append_div_to = ->
   city = $('#get-position').val()
@@ -72,3 +83,11 @@ set_circle = (circle) ->
 
 get_circle_radius = (zoom) ->
   Math.pow(2, 7-zoom)*Math.pow(10, 4)
+
+positions_and_pattern_toggle = (dtime) ->
+  $('.get-positions').toggle(dtime)
+  $('#production-select-pattern').toggle(dtime)
+
+pattern_and_others_toggle = (dtime) ->
+  $('#production-select-pattern').toggle(dtime)
+  $('#production-select-others').toggle(dtime)
