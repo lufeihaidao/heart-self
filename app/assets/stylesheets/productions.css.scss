@@ -31,9 +31,42 @@
     width: 30%;
     height: 600px;
   }
+  #production-select-pattern, #production-select-others{
+    .production-selct-title{
+      margin-top: 10px;      
+      span{
+      // width: 50%;
+        font-size: 1.2em;
+        padding: 10px 35px;
+      }
+    }
+    .pattern-image-show-block{
+      margin-top: 50px;
+      .pattern-image-show{
+        float: left;
+        margin: 0px 5px 20px;
+        .pattern-image-show-image{
+          width: 120px;
+          height: 120px;
+          border: 5px solid #eee;
+        }
+
+        div{
+          text-align: center;
+        }
+      }
+    }
+  }
   .button-bottom{
-    position: absolute;
-    bottom: 0px;
+    .button-bottom-left{
+      position: absolute;
+      bottom: 0px;
+    }
+    .button-bottom-right{
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+    }
   }
 
   #map-display{

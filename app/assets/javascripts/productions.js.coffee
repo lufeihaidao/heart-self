@@ -35,6 +35,10 @@ position = (type, count, value) ->
     </div>
   </div>"
 
+effect = "drop"
+dtime = 2
+p_pattern = ""
+
 $ ->
   init()
 
@@ -46,10 +50,19 @@ $ ->
 
   display_map()  
 
-  $("#production-new-next").click -> positions_and_pattern_toggle(0)
-  $("#back-to-positions").click -> positions_and_pattern_toggle(0)
-  $("#go-to-others").click -> pattern_and_others_toggle(0)
-  $("#back-to-pattern").click -> pattern_and_others_toggle(0)
+  $("#production-new-next").click -> positions_and_pattern_toggle(effect, dtime)
+  $("#back-to-positions").click -> positions_and_pattern_toggle(effect, dtime)
+  $("#go-to-others").click -> pattern_and_others_toggle(effect, dtime)
+  $("#back-to-pattern").click -> pattern_and_others_toggle(effect, dtime)
+
+  $('.pattern-image-show').bind 'mouseover', (e) => 
+    $(e.currentTarget).find('.pattern-image-show-image').css("border-color", "magenta")
+  $('.pattern-image-show').bind 'mouseout', (e) => 
+    $(e.currentTarget).find('.pattern-image-show-image').css("border-color", "#eee")
+  $('.pattern-image-show').bind 'click', (e) => 
+    p_pattern = $(e.currentTarget).find('.pattern-image-show-pattern').text()
+    generate_others(p_pattern)
+    pattern_and_others_toggle(effect, dtime)
 
 init = ->
   $('#production-select-pattern').hide()
@@ -84,10 +97,14 @@ set_circle = (circle) ->
 get_circle_radius = (zoom) ->
   Math.pow(2, 7-zoom)*Math.pow(10, 4)
 
-positions_and_pattern_toggle = (dtime) ->
+positions_and_pattern_toggle = (effect, dtime) ->
   $('.get-positions').toggle(dtime)
   $('#production-select-pattern').toggle(dtime)
 
-pattern_and_others_toggle = (dtime) ->
+pattern_and_others_toggle = (effect, dtime) ->
   $('#production-select-pattern').toggle(dtime)
   $('#production-select-others').toggle(dtime)
+
+generate_others = (p_pattern) ->
+  $('#production-others-pattern').empty()
+  $('#production-others-pattern').text(p_pattern)

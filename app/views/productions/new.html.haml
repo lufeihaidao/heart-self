@@ -30,17 +30,46 @@
     .display-position
       %h3 我的心私地点
     .button-bottom  
-      %button.btn.btn-blue#production-new-next 下一步
+      %button.btn.btn-blue#production-new-next.button-bottom-right 下一步
 
   #map-display.pull-left
   
-  #production-select-pattern.pull-left
-    %h3 something else
+  #production-select-pattern.pull-right
+    .production-selct-title
+      %span.pattern-title.btn-pink 选择款式
+      %span.others-title.btn-blue 更多细节
+    .pattern-image-show-block
+      .pattern-image-show
+        = image_tag "pair_earrings.png", class: "pattern-image-show-image"
+        .pattern-image-show-pattern 一对耳环
+        .pattern-image-show-price RMB 70-85
+      .pattern-image-show
+        = image_tag "necklace.png", class: "pattern-image-show-image"
+        .pattern-image-show-pattern 项链吊坠
+        .pattern-image-show-price RMB 80-85
+      .pattern-image-show
+        = image_tag "large_necklace.png", class: "pattern-image-show-image"
+        .pattern-image-show-pattern 大号吊坠
+        .pattern-image-show-price RMB 80-90
+      .pattern-image-show
+        = image_tag "cufflinks.png", class: "pattern-image-show-image"
+        .pattern-image-show-pattern.center 一对袖扣
+        .pattern-image-show-price RMB 50-60
+      .clearfix  
+
     .button-bottom
-      %button.btn.btn-blue#back-to-positions 返回
-      %button.btn.btn-blue#go-to-others 下一步
-  #production-select-others.pull-left
-    %h3 others
+      %button.btn.btn-blue#back-to-positions.button-bottom-left 返回
+      %button.btn.btn-blue#go-to-others.button-bottom-right 下一步
+  #production-select-others.pull-right
+    .production-selct-title
+      %span.pattern-title.btn-blue 选择款式
+      %span.others-title.btn-pink 更多细节
+    #production-others-detail
+      #production-others-pattern
+      #production-others-size
+      #production-others-show
+      #production-others-material
+      #production-others-color
     .button-bottom
-      %button.btn.btn-blue#back-to-pattern 返回
-      %button.btn.btn-blue#decide-to-create 创建
+      %button.btn.btn-blue#back-to-pattern.button-bottom-left 返回
+      %button.btn.btn-blue#decide-to-create.button-bottom-right 创建
