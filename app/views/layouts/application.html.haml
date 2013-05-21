@@ -8,6 +8,7 @@
         = javascript_include_tag "application"
         = csrf_meta_tags
         = yield(:head)
+    %script{:type => "text/javascript", :src  => "http://api.map.baidu.com/api?v=1.5&ak=87fbca56e51d40372f2af58bd89e22a5"}    
   %body{:class => "#{controller_name} #{action_name}"}
     .navbar.navbar-fixed-top
       %nav.navbar-inner

@@ -35,3 +35,40 @@ position = (type, count, value) ->
     </div>
   </div>"
 
+$ ->
+  $('#position-search').click -> 
+    append_div_to()
+
+  $('#get-position').keyup (e) ->
+    append_div_to() if e.which is 13
+
+  display_map()  
+
+append_div_to = ->
+  city = $('#get-position').val()
+  myGeo = new BMap.Geocoder()
+  myGeo.getPoint city, 
+    (point) -> 
+      circle = new BMap.Circle point, 40000
+      circle = set_circle(circle)
+      map.addOverlay(circle)
+    city  
+  $('.display-position').append("<div>#{city}</div>")
+  $('#get-position').val('')  
+    
+display_map = ->
+  window.map = new BMap.Map("map-display")
+  point = new BMap.Point(104.3,32.6)
+  map.centerAndZoom(point,5)
+  map.enableScrollWheelZoom(true)
+
+set_circle = (circle) ->
+  circle.setStrokeOpacity(1)
+  circle.setStrokeWeight(1)
+  circle.setStrokeColor("magenta")
+  circle.setFillColor("magenta")
+  circle.setFillOpacity(1)  
+  circle
+
+get_circle_radius = (zoom) ->
+  Math.pow(2, 7-zoom)*Math.pow(10, 4)
