@@ -38,6 +38,7 @@ position = (type, count, value) ->
 effect = "drop"
 dtime = 2
 p_pattern = ""
+city_array = new Array()
 
 $ ->
   init()
@@ -70,20 +71,26 @@ $ ->
     target.parent().children().find('.selected').removeClass('selected')
     target.children().addClass('selected')
 
+  $('#decide-to-create').click ->
+    prepare_data()
+    $('#new_production').submit()
+
 init = ->
   $('#production-select-pattern').hide()
   $('#production-select-others').hide()
 
 append_div_to = ->
   city = $('#get-position').val()
-  myGeo = new BMap.Geocoder()
-  myGeo.getPoint city, 
-    (point) -> 
-      circle = new BMap.Circle point, 40000
-      circle = set_circle(circle)
-      map.addOverlay(circle)
-    city  
-  $('.display-position').append("<div>#{city}</div>")
+  unless city in city_array
+    myGeo = new BMap.Geocoder()
+    myGeo.getPoint city, 
+      (point) -> 
+        city_array.push({city:city, lat:point.lat, lng:point.lng})
+        circle = new BMap.Circle point, 40000
+        circle = set_circle(circle)
+        map.addOverlay(circle)
+      city  
+    $('.display-position').append("<div>#{city}</div>")
   $('#get-position').val('')  
     
 display_map = ->
@@ -120,3 +127,12 @@ go_to_others_toggle = (p_pattern) ->
     $("#go-to-others").hide()
   else
     $("#go-to-others").show()
+
+prepare_data = ->
+  $('#production_p_pattern').val(p_pattern)
+  $('#production_p_material').val($('.others-each-material>.selected').text())
+  $('#production_p_color').val($('.others-each-color>.selected').text())
+  $('#production_p_size').val($('.others-each-size>.selected').text())
+  for e,i in city_array
+    positiondiv = position("latitude", i, e.lat) + position("longitude", i, e.lng)
+    $('.production-dots').append(positiondiv)

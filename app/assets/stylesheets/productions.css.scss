@@ -47,6 +47,7 @@
       .pattern-image-show{
         float: left;
         margin: 0px 5px 20px;
+        cursor:pointer;
         .pattern-image-show-image{
           width: 120px;
           height: 120px;
@@ -64,6 +65,7 @@
       .others-each-size,.others-each-material,.others-each-color{
         margin: 2px;
         float: left;
+        cursor:pointer;
         .selected{
           border: 2px solid magenta;
         }
