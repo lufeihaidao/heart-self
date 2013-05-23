@@ -28,8 +28,7 @@ window.get_position = ->
   $('.production-dots').append(positiondiv)
 
 position = (type, count, value) ->
-  "<div class='control-group string optional production_dots_#{type}'>
-    <label for='production_dots_attributes_0_latitude' class='string optional control-label'>#{type}</label>
+  "<div class='hidden control-group string optional production_dots_#{type}'>
     <div class='controls'>
       <input type='text' size='50' name='production[dots_attributes][#{count}][#{type}]' id='production_dots_attributes_#{count}_#{type}' class='string optional' value='#{value}'>
     </div>
