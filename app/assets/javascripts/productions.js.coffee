@@ -50,10 +50,11 @@ $ ->
 
   display_map()  
 
-  $("#production-new-next").click -> positions_and_pattern_toggle(effect, dtime)
-  $("#back-to-positions").click -> positions_and_pattern_toggle(effect, dtime)
-  $("#go-to-others").click -> pattern_and_others_toggle(effect, dtime)
-  $("#back-to-pattern").click -> pattern_and_others_toggle(effect, dtime)
+  go_to_others_toggle(p_pattern)
+  $("#production-new-next,#back-to-positions").click -> positions_and_pattern_toggle(effect, dtime)
+  $("#go-to-others,#back-to-pattern").click -> 
+    pattern_and_others_toggle(effect, dtime)
+    go_to_others_toggle(p_pattern)
 
   $('.pattern-image-show').bind 'mouseover', (e) => 
     $(e.currentTarget).find('.pattern-image-show-image').css("border-color", "magenta")
@@ -63,6 +64,11 @@ $ ->
     p_pattern = $(e.currentTarget).find('.pattern-image-show-pattern').text()
     generate_others(p_pattern)
     pattern_and_others_toggle(effect, dtime)
+
+  $('.others-each-size, .others-each-material, .others-each-color').bind 'click', (e) =>
+    target = $(e.currentTarget)
+    target.parent().children().find('.selected').removeClass('selected')
+    target.children().addClass('selected')
 
 init = ->
   $('#production-select-pattern').hide()
@@ -108,3 +114,9 @@ pattern_and_others_toggle = (effect, dtime) ->
 generate_others = (p_pattern) ->
   $('#production-others-pattern').empty()
   $('#production-others-pattern').text(p_pattern)
+
+go_to_others_toggle = (p_pattern) ->
+  if p_pattern == ""
+    $("#go-to-others").hide()
+  else
+    $("#go-to-others").show()

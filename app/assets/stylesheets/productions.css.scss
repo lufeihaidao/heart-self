@@ -40,6 +40,8 @@
         padding: 10px 35px;
       }
     }
+  }
+  #production-select-pattern{
     .pattern-image-show-block{
       margin-top: 50px;
       .pattern-image-show{
@@ -50,9 +52,20 @@
           height: 120px;
           border: 5px solid #eee;
         }
-
         div{
           text-align: center;
+        }
+      }
+    }
+  }
+  #production-select-others{
+    #production-others-detail{
+      margin-top: 20px;
+      .others-each-size,.others-each-material,.others-each-color{
+        margin: 2px;
+        float: left;
+        .selected{
+          border: 2px solid magenta;
         }
       }
     }
