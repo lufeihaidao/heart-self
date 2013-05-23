@@ -67,8 +67,19 @@
         float: left;
         cursor:pointer;
         .selected{
-          border: 2px solid magenta;
+          // border: 2px solid magenta;
+          color: magenta;
+          font-weight: bold;
         }
+      }
+      .others-each-color{
+        .color-block{
+          height: 50px;
+          width: 50px;
+        }
+          #black-block{ background-color: black}
+          #white-block{ background-color: white}
+          #red-block{ background-color: red}
       }
     }
   }

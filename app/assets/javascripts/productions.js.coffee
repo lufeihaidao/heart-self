@@ -67,8 +67,10 @@ $ ->
 
   $('.others-each-size, .others-each-material, .others-each-color').bind 'click', (e) =>
     target = $(e.currentTarget)
-    target.parent().children().find('.selected').removeClass('selected')
-    target.children().addClass('selected')
+    target.parent().children().find('span.selected').prev().remove()
+    target.parent().children().find('span.selected').removeClass('selected')
+    target.children('span').before('<i class="icon-ok"></i>')
+    target.children('span').addClass('selected')
 
   $('#decide-to-create').click ->
     prepare_data()
@@ -88,8 +90,8 @@ append_div_to = ->
         circle = new BMap.Circle point, 40000
         circle = set_circle(circle)
         map.addOverlay(circle)
+        $('.display-position').append("<div>#{city}</div>")
       city  
-    $('.display-position').append("<div>#{city}</div>")
   $('#get-position').val('')  
     
 display_map = ->

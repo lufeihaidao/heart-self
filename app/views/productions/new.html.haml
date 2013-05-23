@@ -70,6 +70,7 @@
           .others-each-size
             %span 50mm
           .others-each-size
+            %i.icon-ok
             %span.selected 60mm
           .clearfix  
       #production-others-show
@@ -77,22 +78,35 @@
         %h3 材料
         #others-materials
           .others-each-material
+            = image_tag "material.png"
+            %br
+            %i.icon-ok
             %span.selected 竹子
-          .others-each-material            
+          .others-each-material  
+            = image_tag "material.png"  
+            %br        
             %span 亚克力
-          .others-each-material            
+          .others-each-material          
+            = image_tag "material.png"  
+            %br
             %span 金属
           .others-each-material            
+            = image_tag "material.png"
+            %br
             %span 3D打印
           .clearfix    
       #production-others-color
         %h3 颜色
         #others-colors
           .others-each-color
+            .color-block#black-block
+            %i.icon-ok
             %span.selected 黑色
           .others-each-color
+            .color-block#white-block
             %span 白色
           .others-each-color
+            .color-block#red-block
             %span 红色
           .clearfix    
     .button-bottom
