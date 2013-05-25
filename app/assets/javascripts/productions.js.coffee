@@ -38,6 +38,7 @@ effect = "drop"
 dtime = 2
 p_pattern = ""
 city_array = new Array()
+polygon = undefined
 
 $ ->
   init()
@@ -90,6 +91,10 @@ append_div_to = ->
         circle = new BMap.Circle point, 40000
         circle = set_circle(circle)
         map.addOverlay(circle)
+        points = (new BMap.Point(c.lng, c.lat) for c in city_array)
+        map.removeOverlay(polygon) unless polygon is undefined
+        polygon = new BMap.Polygon points, {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
+        map.addOverlay(polygon)
         $('.display-position').append("<div>#{city}</div>")
       city  
   $('#get-position').val('')  
