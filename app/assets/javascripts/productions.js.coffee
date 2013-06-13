@@ -20,13 +20,6 @@
 
 # @production_new = production_new
 
-window.get_position = ->
-  city = $('#get-position').val()
-  [latitude, longitude] = city.split(" ")
-  count = $('.production-dots>.production_dots_latitude').length + 1
-  positiondiv = position("latitude",count,latitude) + position("longitude",count,longitude)
-  $('.production-dots').append(positiondiv)
-
 position = (type, count, value) ->
   "<div class='hidden control-group string optional production_dots_#{type}'>
     <div class='controls'>
