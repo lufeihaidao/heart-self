@@ -31,6 +31,7 @@ effect = "drop"
 dtime = 2
 p_pattern = ""
 city_array = new Array()
+overlays = new Array()
 polygon = undefined
 
 $ ->
@@ -81,13 +82,12 @@ append_div_to = ->
     myGeo.getPoint city, 
       (point) -> 
         city_array.push({city:city, lat:point.lat, lng:point.lng})
-        circle = new BMap.Circle point, 40000
-        circle = set_circle(circle)
-        map.addOverlay(circle)
-        points = (new BMap.Point(c.lng, c.lat) for c in city_array)
-        map.removeOverlay(polygon) unless polygon is undefined
-        polygon = new BMap.Polygon points, {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
-        map.addOverlay(polygon)
+        if city_array.length is 1
+          circle = new BMap.Circle point, 40000
+          circle = set_circle(circle)
+          map.addOverlay(circle)
+        else  
+          plotlines()
         $('.display-position').append("<div>#{city}</div>")
       city  
   $('#get-position').val('')  
@@ -108,6 +108,15 @@ set_circle = (circle) ->
 
 get_circle_radius = (zoom) ->
   Math.pow(2, 7-zoom)*Math.pow(10, 4)
+
+plotlines = ->
+  map.clearOverlays()
+  n = city_array.length
+  for i in [0..(n-2)]
+    for j in [(i+1)..(n-1)]
+      points = (new BMap.Point(c.lng, c.lat) for c in [city_array[i], city_array[j]]  )
+      polyline = new BMap.Polyline points, {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
+      map.addOverlay(polyline)
 
 positions_and_pattern_toggle = (effect, dtime) ->
   $('.get-positions').toggle(dtime)
