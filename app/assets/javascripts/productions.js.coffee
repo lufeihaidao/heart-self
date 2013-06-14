@@ -77,7 +77,7 @@ init = ->
 
 append_div_to = ->
   city = $('#get-position').val()
-  unless city in city_array
+  unless city in (c.city for c in city_array)
     myGeo = new BMap.Geocoder()
     myGeo.getPoint city, 
       (point) -> 
