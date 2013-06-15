@@ -38,10 +38,10 @@ UserProduction.create(:user => user, :production => p2, :order_at => p2.make_at,
 UserProduction.create(:user => user, :production => p3, :order_at => p3.make_at, :bargain_price => (p3.price*0.8).to_int, :is_sold => true, :sold_at => Time.now)
 
 puts 'DOTS'
-d1 = Dot.create(:latitude => "30.3",:longitude => "120.2")
-d2 = Dot.create(:latitude => "29.6",:longitude => "91")
-d3 = Dot.create(:latitude => "29.5",:longitude => "106.5")
-d4 = Dot.create(:latitude => "40.5",:longitude => "120.5")
+d1 = Dot.create(:city_name => "城市1",:x => "30",:y => "120")
+d2 = Dot.create(:city_name => "城市2",:x => "-29",:y => "91")
+d3 = Dot.create(:city_name => "城市3",:x => "29",:y => "-1060")
+d4 = Dot.create(:city_name => "城市4",:x => "-405",:y => "-1205")
 
 puts "DOT belongs_to PRODUCTION"
 p1.dots << d1

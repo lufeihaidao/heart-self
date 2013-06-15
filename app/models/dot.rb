@@ -12,5 +12,5 @@
 
 class Dot < ActiveRecord::Base
   belongs_to :production
-  attr_accessible :latitude, :longitude
+  attr_accessible :x, :y, :city_name
 end

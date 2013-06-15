@@ -1,8 +1,9 @@
 class CreateDots < ActiveRecord::Migration
   def change
     create_table :dots do |t|
-      t.string :latitude, :null => false
-      t.string :longitude, :null => false
+      t.integer :x, :null => false
+      t.integer :y, :null => false
+      t.string :city_name, :null => false
       t.references :production
 
       t.timestamps

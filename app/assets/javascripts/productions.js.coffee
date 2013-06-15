@@ -142,5 +142,6 @@ prepare_data = ->
   $('#production_p_color').val($('.others-each-color>.selected').text())
   $('#production_p_size').val($('.others-each-size>.selected').text())
   for e,i in city_array
-    positiondiv = position("latitude", i, e.lat) + position("longitude", i, e.lng)
+    pixel = map.pointToPixel(new BMap.Point(e.lng, e.lat))
+    positiondiv = position("x", i, pixel.x) + position("y", i, pixel.y) + position("city_name", i, e.city)
     $('.production-dots').append(positiondiv)

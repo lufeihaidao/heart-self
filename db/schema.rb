@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(:version => 20130502024817) do
 
   create_table "dots", :force => true do |t|
-    t.string   "latitude",      :null => false
-    t.string   "longitude",     :null => false
+    t.integer  "x",             :null => false
+    t.integer  "y",             :null => false
+    t.string   "city_name",     :null => false
     t.integer  "production_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
